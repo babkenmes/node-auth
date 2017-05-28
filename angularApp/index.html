@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html ng-app="medInformApp">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title set in pageTitle directive -->
+    <title page-title></title>
+
+    <!-- Google Open Sans -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- Font awesome -->
+    <link href="bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="bower_components/jquery-ui/themes/base/jquery-ui.min.css" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet">
+    <!-- OWL -->
+    <link href="bower_components/OwlCarousel/owl-carousel/owl.carousel.css" rel="stylesheet" />
+
+    <!-- Main Inspinia CSS files -->
+    <link href="styles/animate.css" rel="stylesheet">
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/style.css -->
+    <link href="styles/style.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <link href="bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet"/>
+
+    <link href="styles/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="styles/plugins/datatables/buttons.dataTables.css" rel="stylesheet" />
+
+    <link href="styles/custom.css" rel="stylesheet">
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+<body class="{{$state.current.data.specialClass}}" fix-height>
+
+    <!-- Main view  -->
+    <div ui-view></div>
+    <script src="cordova.js"></script>
+    <script src="cordova_plugins.js"></script>
+
+
+    <!-- jQuery and Bootstrap -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <!-- eonasdan-datetimepicker  -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Moment -->
+    <script src="bower_components/moment/moment.js"></script>
+
+    <!-- MetsiMenu -->
+    <script src="bower_components/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- SlimScroll -->
+    <script src="bower_components/slimScroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Peace JS -->
+    <!--<script src="bower_components/PACE/pace.min.js"></script>-->
+
+    <!--Bit6-->
+    <script src="bower_components/bit6/bit6.min.js"></script>
+
+    <!-- OWL -->
+    <script src="bower_components/OwlCarousel/owl-carousel/owl.carousel.min.js"></script>
+
+    <!-- Angular scripts-->
+    <script src="bower_components/angular/angular.min.js"></script>
+
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="bower_components/angular-sessionstorage/angular-sessionstorage.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="bower_components/iCheck/icheck.min.js"></script>
+    <script src="bower_components/jquery-bridget/jquery-bridget.js"></script>
+    <script src="bower_components/ev-emitter/ev-emitter.js"></script>
+    <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
+    <script src="bower_components/fizzy-ui-utils/utils.js"></script>
+    <script src="bower_components/get-size/get-size.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>
+    <script src="bower_components/outlayer/outlayer.js"></script>
+    <script src="bower_components/masonry/masonry.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+    <script src="bower_components/angular-timer/dist/assets/js/angular-timer-all.min.js"></script>
+    <script src="bower_components/angular-timer/dist/angular-timer.min.js"></script>
+    <script src="bower_components/angular-steps/dist/angular-steps.min.js"></script>
+    <script src="bower_components/fullcalendar/dist/fullcalendar.js"></script>
+    <script src="bower_components/fullcalendar/dist/locale/ru.js"></script>
+
+    <!-- Data tables -->
+    <script src="scripts/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="scripts/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="scripts/plugins/dataTables/angular-datatables.min.js"></script>
+
+    <!-- ocLazyLoad JS -->
+    <script src="bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+
+    <!-- Socket io for angular-->
+    <script src="bower_components/angular-socket-io/socket.js"></script>
+
+    <!-- JWT decoder -->
+    <script src="bower_components/jwt-decode/build/jwt-decode.min.js"></script>
+    <!-- Angular Dependiences -->
+    <!--                      -->
+    <!--                      -->
+    <!--                      -->
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- Custom and plugin javascript -->
+    <script src="scripts/inspinia.js"></script>
+
+
+    <!-- Anglar App Script -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/directives.js"></script>
+
+
+    <script src="scripts/services/authService.js"></script>
+    <script src="scripts/services/authInterceptorService.js"></script>
+    <script src="scripts/services/userService.js"></script>
+
+    <script src="scripts/directives/owlCarouselDirective.js"></script>
+    <script src="scripts/directives/calendar.js"></script>
+    <script src="scripts/directives/draggableDirective.js"></script>
+    <script src="scripts/directives/inputDate.js"></script>
+    <script src="scripts/directives/file.js"></script>
+    <script src="scripts/directives/datePicker.js"></script>
+    <script src="scripts/directives/selectOnClick.js"></script>
+    <script src="scripts/directives/httpSrc.js"></script>
+
+    <script src="scripts/controllers/mainController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/controllers/userController.js"></script>
+    <script src="scripts/controllers/registerController.js"></script>
+
+    <!-- endbuild -->
+
+</body>
+</html>

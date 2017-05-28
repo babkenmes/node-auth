@@ -1,0 +1,26 @@
+﻿<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>My Data</h2>
+        <ol class="breadcrumb">
+            <li class="active">
+                <strong>My Data</strong>
+            </li>
+        </ol>
+    </div>
+
+</div>
+<div class="wrapper wrapper-content animated fadeInUp">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="ibox float-e-margins">
+                <div>
+                    <div class="ibox-content">
+                        <h3><strong>{{user.firstName}} {{user.lastName}}</strong></h3>
+                        <p><strong>Some Field </strong>{{user.someField}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 ng-show="message">{{message}}</h3>
+</div>

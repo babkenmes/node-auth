@@ -1,0 +1,138 @@
+﻿
+<audio ng-hide id="ringtone">
+    <source src="media/ringtone.mp3" />
+    Not supported
+</audio>
+
+<div class="wrapper wrapper-content animated fadeInUp" ng-show="!isOffline">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Мед. Представитель: {{presentation.medRep.firstName}} {{ presentation.medRep.lastName}}</h5>
+                </div>
+                <div class="ibox-content">
+                    
+                    <div class="row">
+                        <div class="col-md-12" ng-hide="presentation.survey.isFilledByDoctor && !presentation.survey.submitted && !isSup">
+                            <div class="slider-container">
+                                <draggable ng-style="{left:left,top:top,'background-color':laserBeamColor}"></draggable>
+                                <div id="myCarousel"
+                                     items="1"
+                                     single-item="true"
+                                     current-item="{{slideIndex}}"
+                                     pagination="true"
+                                     navigation="false"
+                                     touch-drag="false"
+                                     mouse-drag="false"
+                                     auto-height="false"
+                                     transition-style="'fade'"
+                                     lazy-load="true"
+                                     owl-carousel="items">
+                                    <img http-src="{{item.url}}" class="img-responsive" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" ng-show="presentation.survey.isFilledByDoctor && !presentation.survey.submitted && !isSup">
+                            <!--<button class="btn btn-success" ng-click="answerSurvey()"><i class="fa fa-file-text-o"></i> Заполнить Опрос</button>-->
+                            <div class="row">
+                                <steps>
+                                    <step ng-repeat="answer in presentation.survey.answers">
+                                        <div class="col-md-12">
+                                            <form name="survey" novalidate>
+                                                <h3>{{answer.question.text}}</h3>
+                                                <ul class="list-group" ng-hide="answer.question.type =='text'">
+                                                    <li class="list-group-item" ng-repeat="option in answer.question.options track by $index">
+                                                        <label ng-if="answer.question.type =='single'">
+                                                            <input required icheck type="radio" name="radioOption" ng-model="answer.docAnswers" ng-value="option.name">  {{option.title}}
+                                                        </label>
+                                                        <label ng-if="answer.question.type =='multiple'">
+                                                            <input icheck type="checkbox" name="checkboxOption{{$index+1}}" ng-model="answer.docAnswers[option.name]"> {{option.title}}
+                                                        </label>
+                                                    </li>
+                                                </ul>
+                                                <textarea ng-if="answer.question.type =='text'" ng-model="answer.docAnswers"></textarea>
+                                                <span class="text-danger" ng-show="!answer.docAnswers">Опрос не заполнен</span>
+                                                <hr />
+                                                <button class="btn btn-primary" type="submit" ng-disabled="currentSurveySlide<=0" ng-click="goToSurveyStep($index-1 , answer)">Назад</button>
+                                                <button class="btn btn-primary" type="submit" ng-disabled="presentation.survey.answers.length-1 == currentSurveySlide" ng-click="goToSurveyStep($index+1 ,answer)">Вперед</button>
+                                                <button class="btn btn-success" ng-click="submitSurvey(answer)" ng-show="presentation.survey.answers.length-1 == currentSurveySlide"><i class="fa fa-save"></i> Завершить Тест</button>
+                                            </form>
+                                        </div>
+                                    </step>
+                                </steps>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibox-footer">
+                    <div class="row">
+                        <div class="col-xs-6 m-t">
+                        </div>
+                        <div class="col-xs-6 text-right m-t">
+                            <button ng-hide="true" class="btn btn-link">{{slideIndex+1}}</button>
+                            <button ng-hide="isSup" ng-disabled="!inCall && !isCalling" ng-class="{'btn btn-danger' : inCall == true && isCalling == false , 'btn btn-default' : inCall == false && isCalling == false, 'btn btn-primary' : isCalling == true && inCall == false}" ng-click="toggleCall()">
+                                <i class="fa fa-phone" ng-class="{'blink' : isCalling == true}"></i>
+                                <span ng-if="inCall && !isCalling">
+                                    Отсоединиться
+                                </span>
+                                <span ng-if="!inCall && !isCalling">
+                                    Нет входящего звонка
+                                </span>
+
+                                <span ng-if="!inCall && isCalling">
+                                    Ответить
+                                </span>
+                            </button>
+                            <div class="row" ng-show="isSup">
+                                <div class="col-xs-6 text-right">
+                                    <button ng-hide="isSup" ng-disabled="!callIsOnline || (!inCall && !isCalling)" ng-class="{'btn btn-danger' : inCall == true && isCalling == false , 'btn btn-default' :!callIsOnline || inCall == false && isCalling == false, 'btn btn-primary' : isCalling == true && inCall == false}" ng-click="toggleCall()">
+                                        <i class="fa fa-phone" ng-class="{'blink' : isCalling == true}"></i>
+                                        <span ng-if="inCall && !isCalling">
+                                            Отсоединиться
+                                        </span>
+                                        <span ng-if="!inCall && !isCalling">
+                                            Нет входящего звонка
+                                        </span>
+                                        <span ng-if="!inCall && isCalling">
+                                            Ответить
+                                        </span>
+                                    </button>
+                                    <button ng-show="listening" class="btn btn-danger" ng-click="stopListening()">Отключить звшук</button>
+                                    <button ng-show="callIsOnline && !listening" ng-disabled="!callIsOnline" class="btn btn-primary" ng-class="{'btn btn-default' : !callIsOnline, 'btn btn-primary' : callIsOnline}" ng-click="startListening()">Слушать</button>
+                                    <span ng-show="!callIsOnline" class="">Нет звонка между доктором и мед представителем</span>
+                                </div>
+                            </div>
+                            <button ng-if="isSup" ng-click="goToDashboard()" class="btn btn-danger">Назад</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInUp" ng-show="isOffline">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5 class="">Статус Презентации</h5>
+                </div>
+                <div class="ibox-content">
+                    <h2 class="text-center">Отсоединён</h2>
+                </div>
+                <div class="ibox-footer text-center">
+                    <button class="btn btn-primary" ng-click="refreshPage()"><i class="fa fa-refresh"></i> Обновить</button>
+                    <button ng-if="isSup" ng-click="goToDashboard()" class="btn btn-danger">Назад</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+

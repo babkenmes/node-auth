@@ -1,0 +1,10 @@
+﻿{
+  "jwtSecret": "yourSecretHere123",
+  "ClientId": "demoAngularApp",
+  "ClientSecret": "abc123456",
+  "publicFolderRelativePath": "./public",
+  "mongoose": {
+    "uri": "mongodb://localhost/NodaAppDemo"
+  },
+  "websiteUrl":  "https://localhost:1337"
+}

@@ -1,0 +1,46 @@
+﻿<div class="inmodal">
+    <div class="modal-header">
+        <span ng-if="User._id == undefined">
+            Новый Мед. Представитель
+        </span>
+        <span ng-if="User._id != undefined">
+            Редактировать Мед. Представителя
+        </span>
+        
+        <button type="button" class="close" ng-click="closeModal()">
+            <span aria-hidden="true">×</span><span class="sr-only">Закрыть</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group">
+                <label>Имя Профиля</label> <input type="text"
+                                                 placeholder=""
+                                                 class="form-control" ng-model="User.username">
+            </div>
+            <div class="form-group">
+                <label>Имя</label> <input type="text"
+                                                 placeholder=""
+                                                 class="form-control" ng-model="User.firstName">
+            </div>
+            <div class="form-group">
+                <label>Фамилия</label> <input type = "text"
+                                                placeholder=""
+                                                class="form-control" ng-model="User.lastName">
+            </div>
+            <div class="form-group">
+                <label>Пароль</label> <input type="password"
+                                                placeholder=""
+                                                class="form-control" ng-model="User.password">
+            </div>
+        </form>
+        <p ng-show="message">{{message}}</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary pull-right m-t-n-xs" ng-click="saveModal()">
+            
+                Сохранить
+            
+        </button>
+    </div>
+</div>

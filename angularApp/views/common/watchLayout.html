@@ -1,0 +1,21 @@
+﻿
+<div id="wrapper">
+<div class="wrapper wrapper-content animated fadeInUp" ng-show="message">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5 class="">{{title}}</h5>
+                </div>
+                <div class="ibox-content">
+                    <h2 class="text-center">{{message}}</h2>
+                </div>
+                <div class="ibox-footer text-center" ng-show="isSup">
+                    <button class="btn btn-primary" ng-click="goHome()"><i class="fa fa-refresh"></i> Назад в меню</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     <div ui-view></div>
+</div>

@@ -1,0 +1,32 @@
+﻿<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="middle-box text-center loginscreen  animated fadeInUp">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h2 class="">Добро Пожаловать</h2>
+                </div>
+                <div class="ibox-content">
+                    <div>
+                    </div>
+                    <h3>Авторизируйтесь</h3>
+                    <form class="landing-page m-t" role="form">
+                        <div class="form-group or-container">
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="loginData.username" type="text" class="form-control" placeholder="Имя профиля" required="">
+                        </div>
+                        <div class="form-group">
+                            <input ng-model="loginData.password" type="password" class="form-control" placeholder="Пароль" required="">
+                        </div>
+                        <button data-ng-click="login()" type="submit" class="btn btn-primary block full-width m-b"><i class="fa fa-sign-in" aria-hidden="true"></i> Войти</button>
+
+                        <div class="alert alert-{{message.status}} alert-dismissable" data-ng-hide="message.text == ''">
+                            {{message.text}}
+                        </div>
+                        <a ui-sref="register"><span class="nav-label">Register</span></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

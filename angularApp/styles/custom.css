@@ -1,0 +1,429 @@
+﻿.doctor-picker-modal table tr.selectedRow:hover,
+.doctor-picker-modal table tr.selectedRow,
+.presentation-file-picker-modal table tr.selectedPresentationFile:hover,
+.presentation-file-picker-modal table tr.selectedPresentationFile ,
+.test-picker-modal table tr.selectedPreTest:hover,
+.test-picker-modal table tr.selectedPreTest
+{
+    background: #c2c2c2;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+.doctor-picker-modal table tr, .presentation-file-picker-modal table tr ,.test-picker-modal table tr{
+    cursor: pointer;
+}
+
+.presentation-calendar .fc-event, .fc-agenda .fc-event-time, .fc-event a {
+    padding: 4px 6px;
+    background-color: #1ab394;
+    border-color: #1ab394;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover {
+    color: #fff;
+    background-color: #1ab394;
+    border-color: #1ab394;
+}
+
+
+
+.presentation-calendar .fc-event.pending{
+    padding: 4px 6px;
+    background-color: #f8ac59;
+    border-color: #f8ac59;
+}
+
+.presentation-calendar .fc-event.online{
+    padding: 4px 6px;
+    background-color: #1ab394;
+    border-color: #1ab394;
+}
+
+.presentation-calendar .fc-event.offline{
+    padding: 4px 6px;
+    background-color: #ed5565;
+    border-color: #ed5565;
+}
+
+.presentation-calendar .fc-event.finished{
+    padding: 4px 6px;
+    background-color: #bcbcbc;
+    border-color: #bcbcbc;
+}
+
+.slider-container {
+    position: relative;
+}
+
+.pointer {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    opacity: 0.6;
+    border-radius: 50%;
+    z-index: 1000;
+    /*transition: all 0.1s ease;*/
+}
+
+#owl-demo .item {
+    margin: 3px;
+}
+
+.blink {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+.slider-container {
+    position: relative;
+}
+
+
+
+#owl-demo .item {
+    margin: 3px;
+}
+
+.blink {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+#owl-demo .item {
+    margin: 3px;
+}
+
+.blink {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+
+
+
+.doctorPicker {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.inmodal .modal-header {
+    padding: 15px 15px;
+    text-align: left;
+}
+
+.slideThumbnail {
+    border: 3px solid rgba(0,0,0,0);
+}
+
+    .slideThumbnail.selectedSlide {
+        border: 3px solid #1ab394;
+    }
+
+.inmodal .modal-body {
+    background: #ffffff;
+}
+
+.icheckbox_square-green,
+.iradio_square-green {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background: url(green.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_square-green {
+    background-position: 0 0;
+}
+
+    .icheckbox_square-green.hover {
+        background-position: -24px 0;
+    }
+
+    .icheckbox_square-green.checked {
+        background-position: -48px 0;
+    }
+
+    .icheckbox_square-green.disabled {
+        background-position: -72px 0;
+        cursor: default;
+    }
+
+    .icheckbox_square-green.checked.disabled {
+        background-position: -96px 0;
+    }
+
+.iradio_square-green {
+    background-position: -120px 0;
+}
+
+    .iradio_square-green.hover {
+        background-position: -144px 0;
+    }
+
+    .iradio_square-green.checked {
+        background-position: -168px 0;
+    }
+
+    .iradio_square-green.disabled {
+        background-position: -192px 0;
+        cursor: default;
+    }
+
+    .iradio_square-green.checked.disabled {
+        background-position: -216px 0;
+    }
+
+/* HiDPI support */
+@media (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+    .icheckbox_square-green,
+    .iradio_square-green {
+        background-image: url(./green.png);
+        -webkit-background-size: 240px 24px;
+        background-size: 240px 24px;
+    }
+}
+
+.ibox label {
+    margin-bottom: 0px;
+}
+
+img.ad-thumbnail {
+    height: 50px;
+    width: auto;
+    margin: 0 20px;
+}
+
+.connected {
+    color: #1ab394;
+}
+
+.connect {
+    color: #f0ad4e;
+}
+
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+audio{
+    width: 100%;
+}
+
+
+body.modal-open #wrapper{
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+.medInf-datepicker input{
+    margin-top: 11px;
+}
+textarea
+{
+  border:1px solid #999999;
+  width:100%;
+  margin:5px 0;
+  padding:3px;
+}
+.supOffline {
+    color: #c8c8c8;
+}
+.supOnline {
+    color: #6cd9c3;
+}
+.invalid {
+    border-color:red !important;
+}
+    
+
+.table > tbody > tr > td {
+     vertical-align: middle;
+}
+.fc-content  p,.fc-content  h5 {
+    margin: 0;
+}
+
+[ng-click],
+[data-ng-click],
+[x-ng-click] {
+    cursor: pointer;
+}

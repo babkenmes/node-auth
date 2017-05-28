@@ -1,0 +1,23 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element" dropdown>
+                    <a>
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">{{authentication.fullName}}</strong>
+                            </span>
+                        </span>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    {{fn + ln}}
+                </div>
+            </li>
+            <li ui-sref-active="active" ng-show="admin === true">
+                <a ui-sref="index.users"><i class="fa fa-user-secret"></i> <span class="nav-label">Мед. Представители</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
