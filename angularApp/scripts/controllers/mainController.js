@@ -6,11 +6,11 @@ app.controller('MainCtrl', ['$scope', '$state', 'authService', '$timeout', 'loca
         
         $scope.admin = false;
         $scope.authentication = authService.authentication;
-        //if (!$scope.authentication || $scope.authentication.isAuth !== true) {
-        //    $timeout(function () {
-        //        $state.go('login');
-        //    });
-        //}
+        if (!$scope.authentication || $scope.authentication.isAuth !== true) {
+            $timeout(function () {
+                $state.go('login');
+            });
+        }
         $scope.logOut = function () {
             authService.logOut();
             $state.go('login');

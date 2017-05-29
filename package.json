@@ -1,12 +1,12 @@
 {
-  "name": "medinformrtc",
+  "name": "nodeauth",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./app",
     "test": "node test/runMocha"
   },
-  "description": "MedInformRtc",
+  "description": "nodeauth app with angular js",
   "author": {
     "name": " ",
     "email": "info@gmail.com"
@@ -46,7 +46,7 @@
     "sinon-mongoose": "^1.3.0",
     "stylus": "0.42.3",
     "uuid": "^2.0.3",
-    "winston": "^2.3.0",
+    "winston": "^2.3.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

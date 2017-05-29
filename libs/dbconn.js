@@ -30,7 +30,7 @@ Client.findOne({ clientId: config.get("ClientId") }, function (err, angularClien
     }
     if (!angularClient) {
         var angularClient = new Client({
-            name: "MedInform Web client app", clientId: config.get("ClientId"), clientSecret: config.get("ClientSecret") });
+            name: "node-auth Web client app", clientId: config.get("ClientId"), clientSecret: config.get("ClientSecret") });
         angularClient.save(function (err, client) {
             if (err) return log.error(err);
             else log.info("New client - %s:%s", client.clientId, client.clientSecret);

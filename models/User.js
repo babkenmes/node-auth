@@ -19,7 +19,6 @@ var User = new Schema({
     },
     someField: {
         type: String,
-        required: true
     },
     hashedPassword: {
         type: String,

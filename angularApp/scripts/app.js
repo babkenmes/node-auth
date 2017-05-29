@@ -3,7 +3,7 @@ function handleOpenURL(param) {
     window.presentationId = presentationId;
 }
 
-var app = angular.module('medInformApp', [
+var app = angular.module('authClientApp', [
     'ui.router',
     'oc.lazyLoad',
     'LocalStorageModule',

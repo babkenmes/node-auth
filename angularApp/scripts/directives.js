@@ -61,7 +61,7 @@ function pageTitle($rootScope, $timeout) {
                 // Default title - load on Dashboard 1
                 var title = 'INSPINIA | Responsive Admin Theme';
                 // Create your own title pattern
-                if (toState.data && toState.data.pageTitle) title = 'MedInform | ' + toState.data.pageTitle;
+                if (toState.data && toState.data.pageTitle) title = 'node-auth | ' + toState.data.pageTitle;
                 $timeout(function () {
                     element.text(title);
                 });
@@ -534,7 +534,7 @@ function fitHeight($window, $timeout) {
  * Pass all functions into module
  */
 angular
-    .module('medInformApp')
+    .module('authClientApp')
     .directive('tsSurveyInput', tsSurveyInput)
     .directive('pageTitle', pageTitle)
     .directive('sideNavigation', sideNavigation)

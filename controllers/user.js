@@ -5,27 +5,31 @@ const User = require('../models/User.js');
 const helper = require('../libs/entityHelper');
 const oauth2 = require('./../libs/auth/oauth2');
 const constants = require('./../libs/constants');
+const passport = require('passport');
 
 router.use(function (req, res, next) {
-    if (req.url.indexOf("register") != -1) {
-        next();
-    }
-    else {
-        var token = req.headers.authorization.split(" ")[1];
+	if(req.headers.authorization){
+		var token = req.headers.authorization.split(" ")[1];
         passport.authenticate('jwt', function (err, user, info) {
+			req.user = user;
+			req.user.queryConditions = {};
             if (req.user.role == constants.roles.adminRoleName) {
-                req.user.queryConditions = {
-                    "$or": [
-                        { "role": constants.roles.medRepRoleName },
-                    ]
-                };
                 next();
             }
+			else if(req.user.role == constants.roles.simpleUserRoleName){
+				req.user.queryConditions["_id"] = user.id;
+                next();
+			}
             else {
                 return res.status(403).send("You are not aouthorized");
             }
         })(req, res, next);
-    }
+	}
+	else{
+		 if (req.url.indexOf("register") != -1) {
+			next();
+		}
+	}
 });
 
 /* GET all Users. */
@@ -51,19 +55,8 @@ router.get('/:id', function (req, res, next) {
 
 /* POST: Add new Users*/
 router.post('/register', function (req, res, next) {
-    var entity = new User();
-    entity = req.body;
-    User.create(entity, function (err, post) {
-        if (err) return next(err);
-        res.json(post);
-    });
-});
-
-/* POST: Add new Users*/
-router.post('/', function (req, res, next) {
-    var entity = new User();
-    entity = req.body;
-    helper.setCommonProps(entity, true, req.user.username);
+    var entity = req.body;
+	entity.role = constants.roles.simpleUserRoleName;
     User.create(entity, function (err, post) {
         if (err) return next(err);
         res.json(post);
@@ -73,7 +66,7 @@ router.post('/', function (req, res, next) {
 /* PUT /Users/:id */
 router.put('/:id', function (req, res, next) {
     var entity = req.body;
-    helper.setCommonProps(entity, false, req.user.username);
+	entity.role = req.user.role;
     User.findByIdAndUpdate(req.params.id, entity, function (err, post) {
         if (err) return next(err);
         res.json(post);

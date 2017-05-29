@@ -39,7 +39,7 @@ app.constant('ngAppSettings', {
     siteURL: siteURL,
     siteURLWithoutPort: siteURLWithoutPort,
     apiServiceBaseUri: siteURL + '/api/v1/',
-    clientId: 'medInformAngularApp'
+    clientId: 'demoAngularApp'
 });
 
 app.constant('roleNames', {

@@ -18,27 +18,10 @@ var device = require('express-device');
 app.set('port', process.env.PORT || 3000);
 
 
-///***** HTTP Server
-///*****For iis deploy this one works, please comment the https server
-//var server = app.listen(app.get('port'), function () {
-//    console.log('Express server listening on port ' + server.address().port);
-//});
-///******* End of HTTP Server
 
-
-///****** SSL turned  on HTTPS Server
-///******this works for debug please comment the http server
-var fs = require('fs'),
-    https = require('https');
-
-var server = https.createServer({
-    key: fs.readFileSync('keys/14724590-192.168.0.15.key'),
-    cert: fs.readFileSync('keys/14724590-192.168.0.15.cert')
-}, app).listen(app.get('port'), function () {
+var server = app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + server.address().port);
 });
-///********End of SSL turned  on HTTPS Server
-
 
 app.server = server;
 
@@ -51,10 +34,6 @@ var indexCtrl = require('./controllers/index');
 
 var jwt = require('jsonwebtoken');
 var config = require('./libs/config');
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -80,36 +59,5 @@ app.use('/', indexCtrl);
 app.use('/api/v1/Users', userCtrl);
 app.use('/api/v1/auth', authCtrl);
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-    log.debug('Not found URL: %s', req.url);
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-});
-
-// error handlers
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-    app.use(function (err, req, res, next) {
-        res.status(err.status || 500);
-        log.error('Internal error(%d): %s', res.statusCode, err.message);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
-    });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function (err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-        message: err.message,
-        error: {}
-    });
-});
 
 module.exports = app;

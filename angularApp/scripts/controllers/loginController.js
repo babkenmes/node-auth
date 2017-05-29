@@ -1,6 +1,5 @@
 ﻿'use strict';
 app.controller('LoginCtrl', ['$scope', '$state', 'authService', '$timeout', function ($scope, $state, authService, $timeout) {
-        
         var auth = authService.authentication;
         if (auth && auth.isAuth === true) {
             $state.go('index.users');
